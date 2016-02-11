@@ -1,5 +1,5 @@
 " relative linenumbers
-" set relativenumber
+set relativenumber
 set number
 
 " syntax highlighting
