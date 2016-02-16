@@ -24,9 +24,9 @@ alias sj='sl'
 ##STARTPINTOS
 alias pintosformasdisk='pintos --qemu -- -f -q'
 alias pintosrun='pintos --qemu -v -- run'
-alias pintosls='pintos --qemu -- ls'
-alias pintoscat='pintos --qemu -- cat'
-alias pintosrm='pintos --qemu -- rm'
+alias pintosls='pintos --qemu -v -- ls'
+alias pintoscat='pintos --qemu -v -- cat'
+alias pintosrm='pintos --qemu -v -- rm'
 ##ENDPINTOS
 
 # export QT_SELECT=4
@@ -51,6 +51,11 @@ use_color=false
 # instead of using /etc/DIR_COLORS.  Try to use the external file
 # first to take advantage of user additions.  Use internal bash
 # globbing instead of external grep binary.
+
+## COPIED
+#PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
+#PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+## END COPIED
 safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
 match_lhs=""
 [[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
@@ -71,9 +76,9 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
-	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+        PS1='\[\033[01;31m\][\[\033[01;36m\]\W\[\033[01;31m\]]\$\[\033[00m\] '
+    else
+        PS1='\[\033[01;32m\][\[\033[01;37m\]\W\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
