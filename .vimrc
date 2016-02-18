@@ -1,47 +1,3 @@
-" relative linenumbers
-set relativenumber
-set number
-
-" syntax highlighting
-syntax on
-colorscheme obsidian
-set t_Co=256
-
-" disable caret scroll
-set mouse=a 
-
-" keep 5 rows under carret 
-set scrolloff=5
-
-" set row charsize for LaTeX files
-"au Bufread,BufNewFile *.tex set tw=79 
-"au Bufread,BufNewFile *.tex set formatoptions+=1
-
-" auto indentation
-set autoindent
-set smartindent
-
-" tabsize
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"				Keybindings			                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" copy pasta from system clipboard
-map <C-c> "+y
-map <C-p> "+p
-" ctrl + backspace - remove previous word
-" imap <C-Bs><C-W>
-" imap <C-h><C-W>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"				LaTeX				                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:livepreview_previewer = 'okular'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "				Vundle				                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -76,6 +32,61 @@ Plugin 'Raimondi/delimitMate'
 " add plugins before this
 call vundle#end()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " now (after vundle finished) it is save to turn filetype plugins on
 filetype plugin indent on
 syntax on
+" relative linenumbers
+set relativenumber
+set number
+
+" syntax highlighting
+syntax on
+colorscheme obsidian
+set t_Co=256
+
+" color of line numbers
+" highlight LineNr ctermfg=grey
+" highlight CursorLineNr ctermfg=darkgrey
+
+" disable caret scroll
+set mouse=a 
+
+" keep 5 rows under carret 
+set scrolloff=5
+
+" set row charsize for LaTeX files
+"au Bufread,BufNewFile *.tex set tw=79 
+"au Bufread,BufNewFile *.tex set formatoptions+=1
+
+" auto indentation
+set autoindent
+set smartindent
+
+" tabsize
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+
+" jk to exit insert mode
+inoremap jk <ESC>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"				Keybindings			                "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" copy pasta from system clipboard
+map <C-c> "+y
+map <C-p> "+p
+" ctrl + backspace - remove previous word
+" imap <C-Bs><C-W>
+" imap <C-h><C-W>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"				LaTeX				    
+"				"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:livepreview_previewer = 'okular'
+

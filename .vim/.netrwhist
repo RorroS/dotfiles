@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/robin'
+let g:netrw_dirhist_2='/home/robin/.vim'
+let g:netrw_dirhist_3='/home/robin/Documents/trump/TrumpScript/test'
+let g:netrw_dirhist_4='/home/robin/Templates'
+let g:netrw_dirhist_5='/mnt'
+let g:netrw_dirhist_6='/'
+let g:netrw_dirhist_7='/home/robin/.git'
+let g:netrw_dirhist_8='/home/robin/Documents/tsea83/tsea83-labs/lab3'
