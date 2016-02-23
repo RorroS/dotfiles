@@ -29,6 +29,9 @@ Plugin 'Valloric/YouCompleteMe'
 " autocompletesomthingsomethingverynice
 Plugin 'Raimondi/delimitMate'
 
+" git-gutter
+Plugin 'airblade/vim-gitgutter'
+
 " add plugins before this
 call vundle#end()
 
@@ -71,11 +74,8 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-" jk to exit insert mode
-inoremap jk <ESC>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"				Keybindings			                "
+"				Keybindings                                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " copy pasta from system clipboard
 map <C-c> "+y
@@ -84,9 +84,13 @@ map <C-p> "+p
 " imap <C-Bs><C-W>
 " imap <C-h><C-W>
 
+" jk to exit insert mode
+"inoremap jk <ESC>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"				LaTeX				    
-"				"
+"				LaTeX				                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:livepreview_previewer = 'okular'
+au Bufread,BufNewFile *.tex set tw=79
+au Bufread,BufNewFile *.tex set formatoptions+=t
 

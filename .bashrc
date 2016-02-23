@@ -22,7 +22,8 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias sj='sl'
 ##STARTPINTOS
-alias pintosformasdisk='pintos --qemu -- -f -q'
+alias pintosmakedisk='pintos-mkdisk -v fs.dsk 2'
+alias pintosformasdisk='pintos --qemu -v -- -f -q'
 alias pintosrun='pintos --qemu -v -- run'
 alias pintosls='pintos --qemu -v -- ls'
 alias pintoscat='pintos --qemu -v -- cat'
