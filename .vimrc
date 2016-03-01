@@ -91,6 +91,6 @@ map <C-p> "+p
 "				LaTeX				                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:livepreview_previewer = 'okular'
-au Bufread,BufNewFile *.tex set tw=79
-au Bufread,BufNewFile *.tex set formatoptions+=t
+autocmd BufNewFile,Bufread *.tex set tw=79
+autocmd BufNewFile,Bufread *.tex set formatoptions+=t
 

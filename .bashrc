@@ -22,12 +22,12 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias sj='sl'
 ##STARTPINTOS
-alias pintosmakedisk='pintos-mkdisk -v fs.dsk 2'
-alias pintosformasdisk='pintos --qemu -v -- -f -q'
-alias pintosrun='pintos --qemu -v -- run'
-alias pintosls='pintos --qemu -v -- ls'
-alias pintoscat='pintos --qemu -v -- cat'
-alias pintosrm='pintos --qemu -v -- rm'
+alias pmakedisk='pintos-mkdisk fs.dsk 2'
+alias pformatdisk='pintos --qemu -v -- -f -q'
+alias prun='pintos --qemu -v -- run'
+alias pls='pintos --qemu -v -- ls'
+alias pcat='pintos --qemu -v -- cat'
+alias prm='pintos --qemu -v -- rm'
 ##ENDPINTOS
 
 # export QT_SELECT=4
