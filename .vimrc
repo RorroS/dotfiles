@@ -23,6 +23,8 @@ Plugin 'gmarik/Vundle.vim'
 " vimtex
 Plugin 'xuhdev/vim-latex-live-preview'
 
+Plugin 'rdnetto/YCM-Generator'
+
 " YCM
 Plugin 'Valloric/YouCompleteMe'
 
@@ -44,6 +46,9 @@ syntax on
 " relative linenumbers
 set relativenumber
 set number
+
+" case insensitivity
+set ignorecase
 
 " syntax highlighting
 syntax on
@@ -93,4 +98,6 @@ map <C-p> "+p
 let g:livepreview_previewer = 'okular'
 autocmd BufNewFile,Bufread *.tex set tw=79
 autocmd BufNewFile,Bufread *.tex set formatoptions+=t
+autocmd BufNewFile,Bufread *.txt set tw=79
+autocmd BufNewFile,Bufread *.txt set formatoptions+=t
 

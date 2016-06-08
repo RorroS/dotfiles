@@ -21,6 +21,12 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias sj='sl'
+alias sl='ls'
+alias terminal='xfce4-terminal'
+alias ssh-home='ssh robin@ssh.rorro.se'
+alias ssh-ixtab='ssh robsl733@ixtab.edu.isy.liu.se -Y'
+alias gull='git pull'
+alias gush='git push'
 ##STARTPINTOS
 alias pmakedisk='pintos-mkdisk fs.dsk 2'
 alias pformatdisk='pintos --qemu -v -- -f -q'

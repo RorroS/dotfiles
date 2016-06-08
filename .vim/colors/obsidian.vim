@@ -91,7 +91,7 @@ let colors_name = "obsidian"
 " hi rubyClassDeclaration guifg=#45ce70 guibg=NONE gui=bold
 
 :hi Normal       guifg=White guibg=grey15
-:hi Cursor       guibg=khaki guifg=slategre
+:hi Cursor       guibg=khaki guifg=slategrey
 :hi iCursor      guifg=white guibg=steelblue
 :hi VertSplit    guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
 :hi Folded       guibg=black guifg=grey40 ctermfg=grey ctermbg=darkgrey
