@@ -3,7 +3,7 @@
 
 # The following files will not be ignored
 !.vimrc
-!.vim
+!.vim/
 !.bashrc
 !.inputrc
 !.gitignore
