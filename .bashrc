@@ -27,6 +27,8 @@ alias ssh-home='ssh robin@ssh.rorro.se'
 alias ssh-ixtab='ssh robsl733@ixtab.edu.isy.liu.se -Y'
 alias gull='git pull'
 alias gush='git push'
+alias apache-start='sudo systemctl start httpd.service'
+alias apache-stop='sudo systemctl stop httpd.service'
 
 # export QT_SELECT=4
 
@@ -151,6 +153,3 @@ colors() {
 }
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
-
-export PATH="/home/robin/Documents/tddb68/tddb68-labs/pintos/src/utils/:${PATH}/"
-export PATH=$PATH:/path/to/TrumpScript/bin
