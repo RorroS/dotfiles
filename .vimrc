@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 "				Vundle				                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-=======
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"				Vundle				                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
->>>>>>> 245fcf9f0917c08b72b7eac8ae8e8e949d8f77df
 set guioptions-=r
 
 set nocompatible
@@ -29,19 +23,12 @@ Plugin 'gmarik/Vundle.vim'
 " vimtex
 Plugin 'xuhdev/vim-latex-live-preview'
 
-<<<<<<< HEAD
 " YCM
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'rdnetto/YCM-Generator'
 
 " show what files are available in :e
 Plugin 'tpope/vim-sensible'
-=======
-Plugin 'rdnetto/YCM-Generator'
-
-" YCM
-Plugin 'Valloric/YouCompleteMe'
->>>>>>> 245fcf9f0917c08b72b7eac8ae8e8e949d8f77df
 
 " autocompletesomthingsomethingverynice
 Plugin 'Raimondi/delimitMate'
@@ -77,7 +64,6 @@ set t_Co=256
 " disable caret scroll
 set mouse=a 
 
-<<<<<<< HEAD
 " disable swapfiles
 set noswapfile
 
@@ -87,14 +73,6 @@ set scrolloff=5
 " autoclose tags
 " example <body>.:
 inoremap .: </<C-X><C-O><Esc>a
-=======
-" keep 5 rows under carret 
-set scrolloff=5
-
-" set row charsize for LaTeX files
-"au Bufread,BufNewFile *.tex set tw=79 
-"au Bufread,BufNewFile *.tex set formatoptions+=1
->>>>>>> 245fcf9f0917c08b72b7eac8ae8e8e949d8f77df
 
 " auto indentation
 set autoindent
