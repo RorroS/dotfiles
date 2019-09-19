@@ -7,6 +7,9 @@ xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo
 
+# Making autocomplete a tad bit smarter
+complete -d cd
+
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
@@ -20,17 +23,19 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-alias sj='sl'
-alias sl='ls'
-alias terminal='xfce4-terminal'
-alias ssh-home='ssh robin@ssh.rorro.se'
 alias ssh-ixtab='ssh robsl733@ixtab.edu.isy.liu.se -Y'
-alias gull='git pull'
-alias gush='git push'
-alias apache-start='sudo systemctl start httpd.service'
-alias apache-stop='sudo systemctl stop httpd.service'
+alias apache-start='sudo service apache2 start'
+alias apache-restart='sudo service apache2 restart'
+alias apache-stop='sudo service apache2 stop'
+alias wifi-restart='sudo service network-manager restart'
+alias disable-wacom-touch='xinput disable "Wacom Bamboo 16FG 4x5 Finger"'
+alias xit='exit'
+alias :q='exit'
+alias w++17='g++ -std=c++17 -pedantic -Wall -Wextra'
+alias heffa-ssh='ssh -Y x_robsl@heffa.nsc.liu.se' 
 
 # export QT_SELECT=4
+#export CMAKE_MODULE_PATH=/usr/share/SFML/cmake/Modules/
 
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
@@ -45,7 +50,9 @@ case ${TERM} in
 		;;
 esac
 
-use_color=false
+
+# use_color=true
+force_color_prompt=true
 
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
@@ -152,4 +159,10 @@ colors() {
 	done
 }
 
+scp_heffa() {
+    scp $1 x_robsl@heffa.nsc.liu.se:labs
+}
+
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
+export PATH=$HOME/bin:$PATH

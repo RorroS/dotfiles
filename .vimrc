@@ -1,48 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"				Vundle				                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-set guioptions-=r
-
-set nocompatible
-filetype plugin indent off
-syntax off
-
-" set the runtime path for vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" start vundle environment
-call vundle#begin()
-
-" let Vundle manage Vundle (this is required)
-Plugin 'gmarik/Vundle.vim'
-
-" to install a plugin add it here and run :PluginInstall.
-" to update the plugins run :PluginInstall! or :PluginUpdate
-" to delete a plugin remove it here and run :PluginClean
-
-" vimtex
-Plugin 'xuhdev/vim-latex-live-preview'
-
-" YCM
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'rdnetto/YCM-Generator'
-
-" show what files are available in :e
-Plugin 'tpope/vim-sensible'
-
-" autocompletesomthingsomethingverynice
-Plugin 'Raimondi/delimitMate'
-
-" git-gutter
-Plugin 'airblade/vim-gitgutter'
-
-" add plugins before this
-call vundle#end()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" now (after vundle finished) it is save to turn filetype plugins on
 filetype plugin indent on
 syntax on
 " relative linenumbers
@@ -54,7 +9,6 @@ set ignorecase
 
 " syntax highlighting
 syntax on
-colorscheme obsidian
 set t_Co=256
 
 " color of line numbers
