@@ -163,6 +163,10 @@ scp_heffa() {
     scp $1 x_robsl@heffa.nsc.liu.se:labs
 }
 
+unlock_session() {
+    sudo loginctl unlock-session $1
+}
+
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 export PATH=$HOME/bin:$PATH
