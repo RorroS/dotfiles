@@ -1,62 +1,88 @@
-filetype plugin indent on
-syntax on
-" relative linenumbers
+"""""""""" Start plug
+call plug#begin('~/.vim/plugged')
+
+" Autocompletion
+Plug 'ycm-core/YouCompleteMe'
+
+" Auto closing of parenthesis, brackets etc.
+Plug 'Raimondi/delimitMate'
+
+" Status bar/tabline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Mappings on surroud things
+" Surround word under cursor: ysiw(
+" Replace surrounding: cs([
+Plug 'tpope/vim-surround'
+
+"File explorer
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
+"""""""""" End plug
+
 set relativenumber
 set number
 
-" case insensitivity
+" Case insensitivity
 set ignorecase
+set wildignorecase
 
-" syntax highlighting
-syntax on
-set t_Co=256
+" Colorscheme
+syntax enable
+set background=dark
+"let g:solarized_termcolors=256
+colorscheme solarized
 
-" color of line numbers
-" highlight LineNr ctermfg=grey
-" highlight CursorLineNr ctermfg=darkgrey
+" Status bar config
+let g:airline_theme='wombat'
 
-" disable caret scroll
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
+
+let g:airline_section_z = '%l/%LL:%cC'
+
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
+
+" Disable caret scroll
 set mouse=a 
 
-" disable swapfiles
+" Disable swapfiles
 set noswapfile
 
-" keep 5 rows under carret 
+" Keep 5 rows under carret 
 set scrolloff=5
 
-" autoclose tags
-" example <body>.:
-inoremap .: </<C-X><C-O><Esc>a
-
-" auto indentation
+" Auto indentation
 set autoindent
 set smartindent
 
-" tabsize
+" Tabsize
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"				Keybindings                                                     "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" copy pasta from system clipboard
+" Close vim if only NERDTree window left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"""""""""" Keybindings
+" Change leader key to space
+let mapleader = "\<space>"
+
+" Copy pasta from system clipboard
 map <C-c> "+y
 map <C-p> "+p
-" ctrl + backspace - remove previous word
-" imap <C-Bs><C-W>
-" imap <C-h><C-W>
-
-" jk to exit insert mode
-"inoremap jk <ESC>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"				LaTeX				                                            "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:livepreview_previewer = 'okular'
-autocmd BufNewFile,Bufread *.tex set tw=79
-autocmd BufNewFile,Bufread *.tex set formatoptions+=t
-autocmd BufNewFile,Bufread *.txt set tw=79
-autocmd BufNewFile,Bufread *.txt set formatoptions+=t
-
+map <Leader>f :NERDTreeToggle<CR>
