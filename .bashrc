@@ -18,24 +18,22 @@ shopt -s checkwinsize
 
 shopt -s expand_aliases
 
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+alias cp="cp -i" # confirm before overwriting something
+alias df='df -h' # human-readable sizes
+alias free='free -m' # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-alias ssh-ixtab='ssh robsl733@ixtab.edu.isy.liu.se -Y'
-alias apache-start='sudo service apache2 start'
-alias apache-restart='sudo service apache2 restart'
-alias apache-stop='sudo service apache2 stop'
-alias wifi-restart='sudo service network-manager restart'
 alias disable-wacom-touch='xinput disable "Wacom Bamboo 16FG 4x5 Finger"'
 alias xit='exit'
 alias :q='exit'
 alias w++17='g++ -std=c++17 -pedantic -Wall -Wextra'
-alias heffa-ssh='ssh -Y x_robsl@heffa.nsc.liu.se' 
-
-# export QT_SELECT=4
-#export CMAKE_MODULE_PATH=/usr/share/SFML/cmake/Modules/
+alias vim='gvim'
+#alias ssh-ixtab='ssh robsl733@ixtab.edu.isy.liu.se -Y'
+#alias apache-start='sudo service apache2 start'
+#alias apache-restart='sudo service apache2 restart'
+#alias apache-stop='sudo service apache2 stop'
+#alias wifi-restart='sudo service network-manager restart'
+#alias heffa-ssh='ssh -Y x_robsl@heffa.nsc.liu.se' 
 
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend

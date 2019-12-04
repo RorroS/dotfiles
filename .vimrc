@@ -75,6 +75,12 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
+" Disable scrollbar in gvim
+set guioptions=Ace
+
+" Title bar config
+autocmd BufEnter * let &titlestring = "GVIM [ " . "%t". " ]"
+
 " Close vim if only NERDTree window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
