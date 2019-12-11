@@ -19,9 +19,13 @@ Plug 'tpope/vim-surround'
 "File explorer
 Plug 'scrooloose/nerdtree'
 
+" Visiblel indentation
+Plug 'nathanaelkane/vim-indent-guides'
+
 call plug#end()
 """""""""" End plug
 
+" Line numbers
 set relativenumber
 set number
 
@@ -33,6 +37,7 @@ set wildignorecase
 syntax enable
 set background=dark
 "let g:solarized_termcolors=256
+"colorscheme nuvola
 colorscheme solarized
 
 " Status bar config
@@ -56,14 +61,33 @@ let g:airline_section_z = '%l/%LL:%cC'
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
+" IndentGuides config
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+
 " Disable caret scroll
-set mouse=a 
+set mouse=a
 
 " Disable swapfiles
 set noswapfile
 
-" Keep 5 rows under carret 
+" Keep 5 rows under carret
 set scrolloff=5
+
+" Make trailing whitespaces visible
+highlight ExtraWhitespace ctermbg=grey guibg=grey
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Remove trailing white spaces
+function RemoveTrailingWhiteSpaces()
+    %s/\s*$//
+    ''
+endfunction
 
 " Auto indentation
 set autoindent
@@ -78,11 +102,16 @@ set expandtab
 " Disable scrollbar in gvim
 set guioptions=Ace
 
+" Show line at column
+set colorcolumn=80
+
 " Title bar config
 autocmd BufEnter * let &titlestring = "GVIM [ " . "%t". " ]"
 
+" NERDTree config
 " Close vim if only NERDTree window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
 
 """""""""" Keybindings
 " Change leader key to space
@@ -92,3 +121,4 @@ let mapleader = "\<space>"
 map <C-c> "+y
 map <C-p> "+p
 map <Leader>f :NERDTreeToggle<CR>
+map <Leader>t :call RemoveTrailingWhiteSpaces()<CR>
