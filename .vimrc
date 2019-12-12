@@ -22,6 +22,9 @@ Plug 'scrooloose/nerdtree'
 " Visiblel indentation
 Plug 'nathanaelkane/vim-indent-guides'
 
+" Buffer explorer
+Plug 'ctrlpvim/ctrlp.vim'
+
 call plug#end()
 """""""""" End plug
 
@@ -36,8 +39,6 @@ set wildignorecase
 " Colorscheme
 syntax enable
 set background=dark
-"let g:solarized_termcolors=256
-"colorscheme nuvola
 colorscheme solarized
 
 " Status bar config
@@ -111,14 +112,30 @@ autocmd BufEnter * let &titlestring = "GVIM [ " . "%t". " ]"
 " NERDTree config
 " Close vim if only NERDTree window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Show hidden files
 let NERDTreeShowHidden=1
+" Close NERDTree on open file
+let NERDTreeQuitOnOpen=1
+
+" ctrlp.vim config
+let g:ctrlp_map = ''
+
 
 """""""""" Keybindings
 " Change leader key to space
 let mapleader = "\<space>"
 
 " Copy pasta from system clipboard
-map <C-c> "+y
-map <C-p> "+p
-map <Leader>f :NERDTreeToggle<CR>
-map <Leader>t :call RemoveTrailingWhiteSpaces()<CR>
+map <C-c> "+y<CR>
+map <C-p> "+p<CR>
+" Open/Close NerdTree with spc f f
+map <Leader>ff :NERDTreeToggle<CR>
+" Remove trailing whitespaces with spc x d w
+map <Leader>xdw :call RemoveTrailingWhiteSpaces()<CR>
+" Open buffer showing currently open buffers spc b b
+map <Leader>bb :CtrlPBuffer<CR>
+" Tab/Shift tab to indent
+nnoremap <Tab> >gV
+nnoremap <S-Tab> <gV
+vnoremap <Tab> >gV
+vnoremap <S-Tab> <gV
