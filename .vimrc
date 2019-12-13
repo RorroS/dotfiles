@@ -139,3 +139,5 @@ nnoremap <Tab> >gV
 nnoremap <S-Tab> <gV
 vnoremap <Tab> >gV
 vnoremap <S-Tab> <gV
+" ctrl backspace to delete a word in insert mode
+inoremap <C-BS> <C-w>
