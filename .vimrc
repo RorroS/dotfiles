@@ -66,6 +66,7 @@ let g:airline_section_warning = ''
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
+let g:indent_guides_default_mapping = 0
 
 " Disable caret scroll
 set mouse=a
@@ -120,6 +121,8 @@ let NERDTreeQuitOnOpen=1
 " ctrlp.vim config
 let g:ctrlp_map = ''
 
+" YCM config
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 """""""""" Keybindings
 " Change leader key to space
