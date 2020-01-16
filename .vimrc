@@ -25,6 +25,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 " Buffer explorer
 Plug 'ctrlpvim/ctrlp.vim'
 
+" elm
+Plug 'elmcast/elm-vim'
+
 call plug#end()
 """""""""" End plug
 
@@ -123,6 +126,9 @@ let g:ctrlp_map = ''
 
 " YCM config
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" elm config
+let g:elm_setup_keybindings = 0
 
 """""""""" Keybindings
 " Change leader key to space
