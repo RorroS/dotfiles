@@ -158,8 +158,8 @@ colors() {
 	done
 }
 
-scp_heffa() {
-    scp $1 x_robsl@heffa.nsc.liu.se:labs
+gf() {
+    scp robsl733@thinlinc.edu.liu.se:/home/robsl733/.AES_SC/tempfiles/$1/ex4.py .
 }
 
 unlock_session() {
