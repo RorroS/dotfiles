@@ -34,7 +34,6 @@ alias pypy='pypy3'
 #alias apache-restart='sudo service apache2 restart'
 #alias apache-stop='sudo service apache2 stop'
 #alias wifi-restart='sudo service network-manager restart'
-#alias heffa-ssh='ssh -Y x_robsl@heffa.nsc.liu.se' 
 
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
@@ -156,10 +155,6 @@ colors() {
 		done
 		echo; echo
 	done
-}
-
-gf() {
-    scp robsl733@thinlinc.edu.liu.se:/home/robsl733/.AES_SC/tempfiles/$1/ex4.py .
 }
 
 unlock_session() {
