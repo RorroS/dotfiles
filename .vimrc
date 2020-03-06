@@ -111,7 +111,7 @@ set guioptions=Ace
 set colorcolumn=80
 
 " Title bar config
-autocmd BufEnter * let &titlestring = "GVIM [ " . "%t". " ]"
+autocmd BufEnter * let &titlestring = "" . "%t". " - GVIM"
 
 " NERDTree config
 " Close vim if only NERDTree window left open
