@@ -163,6 +163,10 @@ unlock_session() {
     sudo loginctl unlock-session $1
 }
 
+update_bunny() {
+    serverpi /home/pi/change_config.sh $1
+}
+
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 export PATH=$HOME/bin:$PATH
