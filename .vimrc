@@ -110,6 +110,11 @@ set guioptions=Ace
 " Show line at column
 set colorcolumn=80
 
+" Code folding
+set foldmethod=indent
+set foldnestmax=2
+set foldlevel=0
+
 " Title bar config
 autocmd BufEnter * let &titlestring = "" . "%t". " - GVIM"
 
@@ -150,3 +155,5 @@ vnoremap <Tab> >gV
 vnoremap <S-Tab> <gV
 " ctrl backspace to delete a word in insert mode
 inoremap <C-BS> <C-w>
+" Toggle code fold with spc a
+map <Leader>a za<CR>
