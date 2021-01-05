@@ -42,7 +42,7 @@ set wildignorecase
 " Colorscheme
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme srcery
 
 " Status bar config
 let g:airline_theme='wombat'
@@ -116,7 +116,7 @@ set foldnestmax=2
 set foldlevel=0
 
 " Title bar config
-autocmd BufEnter * let &titlestring = "" . "%t". " - GVIM"
+autocmd BufEnter * let &titlestring = "GVIM - " . "%t"
 
 " NERDTree config
 " Close vim if only NERDTree window left open
